@@ -1,0 +1,27 @@
+{
+  "name": "passport-lawyersone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/passport-lawyersone",
+  "scripts": {
+    "clean": "rimraf dist/*",
+    "build": "pnpm run clean && pnpm tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "passport-oauth2": "^1.8.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.2",
+    "@types/passport-oauth2": "^1.4.17",
+    "jest": "^29.7.0",
+    "rimraf": "^6.0.1",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
