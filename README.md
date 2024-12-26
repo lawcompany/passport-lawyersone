@@ -7,6 +7,13 @@ pnpm run build
 ```
 
 ## How to use
+- passport-lawyersone 추가
+```
+# npm
+npm install git+https://github.com/lawcompany/passport-lawyersone.git
+# pnpm
+pnpm add git+https://github.com/lawcompany/passport-lawyersone.git
+```
 
 - passport 추가
 
