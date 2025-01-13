@@ -73,27 +73,12 @@ Strategy.prototype.userProfile = function (
 
       try {
         const json = JSON.parse(body) as Record<string, any>
-        var profile: Record<string, any> = { provider: 'lawyersone' }
-        profile.id = json.id
-        profile.name = json.name
-        profile.username = json.username
-        profile.email = json.email
-        profile.phone = json.phone
-        profile.role = json.role
-        profile.birth = json.birth
-        profile.createdAt = json.createdAt
-        profile._raw = body
-        profile._json = {
-          id: json.id,
-          name: json.name,
-          username: json.username,
-          email: json.email,
-          phone: json.phone,
-          role: json.role,
-          birth: json.birth,
-          createdAt: json.createdAt,
-        }
-        return done(null, profile)
+        return done(null, {
+          ...json,
+          provider: 'lawyersone',
+          raw: body,
+          _json: json,
+        })
       } catch (e) {
         console.log('error : ', e)
         return done(e)

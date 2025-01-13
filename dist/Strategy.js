@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -65,27 +76,7 @@ Strategy.prototype.userProfile = function (accessToken, done) {
         }
         try {
             var json = JSON.parse(body);
-            var profile = { provider: 'lawyersone' };
-            profile.id = json.id;
-            profile.name = json.name;
-            profile.username = json.username;
-            profile.email = json.email;
-            profile.phone = json.phone;
-            profile.role = json.role;
-            profile.birth = json.birth;
-            profile.createdAt = json.createdAt;
-            profile._raw = body;
-            profile._json = {
-                id: json.id,
-                name: json.name,
-                username: json.username,
-                email: json.email,
-                phone: json.phone,
-                role: json.role,
-                birth: json.birth,
-                createdAt: json.createdAt,
-            };
-            return done(null, profile);
+            return done(null, __assign(__assign({}, json), { provider: 'lawyersone', raw: body, _json: json }));
         }
         catch (e) {
             console.log('error : ', e);
