@@ -46,7 +46,9 @@ function Strategy(options, verify) {
     options.oauthHost =
         options.environment === 'production'
             ? 'https://lawyersone.co.kr'
-            : 'https://lawyersone-api.lawbot.io';
+            : options.environment === 'local'
+                ? 'http://localhost:3030'
+                : 'https://lawyersone-api.lawbot.io';
     passport_oauth2_1.default.call(this, (0, exports.buildOptions)(options), verify);
     this.name = 'lawyersone';
     this._userProfileURL = "".concat(options.oauthHost, "/api/external/users/me");

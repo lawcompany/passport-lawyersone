@@ -34,6 +34,8 @@ function Strategy(options: StrategyOptions = {}, verify: any) {
   options.oauthHost =
     options.environment === 'production'
       ? 'https://lawyersone.co.kr'
+      : options.environment === 'local'
+      ? 'http://localhost:3030'
       : 'https://lawyersone-api.lawbot.io'
   OAuth2Strategy.call(this, buildOptions(options), verify)
   this.name = 'lawyersone'
