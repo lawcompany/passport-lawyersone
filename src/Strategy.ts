@@ -40,6 +40,7 @@ function Strategy(options: StrategyOptions = {}, verify: any) {
   OAuth2Strategy.call(this, buildOptions(options), verify)
   this.name = 'lawyersone'
   this._userProfileURL = `${options.oauthHost}/api/external/users/me`
+  this._state = options.state || true
 }
 
 /**

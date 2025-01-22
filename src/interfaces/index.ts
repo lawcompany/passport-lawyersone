@@ -9,6 +9,7 @@ export interface StrategyOptions {
     'User-Agent'?: string
   }
   userAgent?: string
+  state?: boolean
 }
 
 export interface Profile {}

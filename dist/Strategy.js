@@ -52,6 +52,7 @@ function Strategy(options, verify) {
     passport_oauth2_1.default.call(this, (0, exports.buildOptions)(options), verify);
     this.name = 'lawyersone';
     this._userProfileURL = "".concat(options.oauthHost, "/api/external/users/me");
+    this._state = options.state || true;
 }
 /**
  * `OAuth2Stragegy`를 상속 받는다.
